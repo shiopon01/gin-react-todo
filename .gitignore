@@ -1,1 +1,8 @@
 .history
+node_modules
+/assets/js/bundle.js
+server/bindata.go
+vendor
+
+yarn-error.log
+tmp/*

@@ -1,0 +1,43 @@
+{
+  "name": "gin-sample",
+  "version": "0.1.0",
+  "private": true,
+  "description": "gin sample",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "node-dev": "^3.1.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.17.0",
+    "webpack-cli": "^3.1.0",
+    "whatwg-fetch": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "webpack -w",
+    "bindata": "go-bindata -debug -o ./server/bindata.go assets/*",
+    "build": "cross-env NODE_ENV=production webpack -p && go-bindata -o ./server/bindata.go assets/* && gox -cgo -osarch=\"windows/amd64 linux/amd64\" -output=dist/web_{{.OS}}_{{.Arch}} ./server/...",
+    "build:dev": "webpack --mode development",
+    "build:prd": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shiopon01/gin-sample.git"
+  },
+  "author": "shiopon01 <shio.0323@gmail.com> (http://shiopon.net)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react-redux": "^2.3.0",
+    "prettier": "^1.14.2"
+  }
+}
