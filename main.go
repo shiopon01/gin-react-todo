@@ -8,10 +8,12 @@ import (
 func main() {
 	r := gin.Default()
 
+	// Load Frontend HTML
 	r.LoadHTMLGlob("app/frontend/*")
 
 	// Routing (/app/router.go)
-	router.RouteRegister(r.Group("/"))
+	app.RouteCollections(r)
 
-	r.Run() // listen and serve on 0.0.0.0:8080
+	// listen and serve on 0.0.0.0:8080
+	r.Run(":8080")
 }
