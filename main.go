@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"./controllers"
+	"./app/controllers"
 
 	"github.com/gin-gonic/gin"
 )
@@ -14,7 +14,7 @@ var router *gin.Engine
 
 func main() {
 	router = gin.Default()
-	router.LoadHTMLGlob("templates/*")
+	router.LoadHTMLGlob("app/views/*")
 
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(
@@ -28,17 +28,18 @@ func main() {
 
 	router.GET("/:id", func(c *gin.Context) {
 		n := c.Param("id")
+
 		id, err := strconv.Atoi(n)
 		if err != nil {
 			c.JSON(400, err)
 			return
 		}
+
 		if id <= 0 {
 			c.JSON(400, gin.H{"status": "id should be bigger than 0"})
 			return
 		}
 
-		// データを処理する
 		ctrl := controllers.NewUser()
 		result := ctrl.Get(id)
 		if result == nil || reflect.ValueOf(result).IsNil() {
