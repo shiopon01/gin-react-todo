@@ -37,6 +37,5 @@ module.exports = {
     modules: ['node_modules'],
     extensions: ['.js', '.jsx']
   },
-  plugins: [],
-  cache: true
+  plugins: []
 }

@@ -1,12 +1,12 @@
-import * as React from 'react';
+import * as React from 'react'
 
 export default class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       message: ''
-    };
+    }
   }
 
   componentDidMount() {
@@ -15,15 +15,15 @@ export default class App extends React.Component {
       .then(json => {
         this.setState({
           message: json.message
-        });
+        })
       })
   }
 
   render() {
-    const { message } = this.state;
+    const { message } = this.state
 
     return (
       <div>HELLO { message }</div>
-    );
+    )
   }
 }

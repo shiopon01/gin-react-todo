@@ -5,4 +5,4 @@ server/bindata.go
 vendor
 
 yarn-error.log
-tmp/*
+tmp

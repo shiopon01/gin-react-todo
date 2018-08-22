@@ -1,8 +1,9 @@
-import * as ReactDOM from 'react-dom';
-import * as React from 'react';
-import App from './app/App';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-require("babel-polyfill");
-require('whatwg-fetch');
+import App from './app/App'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+)

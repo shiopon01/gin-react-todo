@@ -18,6 +18,6 @@ func RouteCollections(router *gin.Engine) {
 	// Add Routes
 	v1 := router.Group("/api")
 
-	// c.UserRegister(v1.Group("/user"))
+	c.UserRegister(v1.Group("/user"))
 	c.TodoRegister(v1.Group("/todo"))
 }
