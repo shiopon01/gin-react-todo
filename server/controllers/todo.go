@@ -21,19 +21,37 @@ func NewTodo() Todo {
 
 // Get ...
 func (c Todo) Get(n int) interface{} {
-	repo := models.NewTodoRepository()
+	repo := models.NewTodosRepository()
 	todo := repo.GetByID(n)
 	log.Println("LOG:", todo)
 	return todo
 }
 
+// Get ...
+func (c Todo) GetAll() {
+	repo := models.NewTodosRepository()
+	repo.GetAll()
+	return
+}
+
 // TodoRegister router
 func TodoRegister(router *gin.RouterGroup) {
+
+	// GET /
+	// return normal message
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(200, gin.H{"message": "TODOS"})
 	})
 
-	router.GET("/:id", func(c *gin.Context) {
+	// GET /list
+	router.GET("/list", func(c *gin.Context) {
+		ctrl := NewTodo()
+		ctrl.GetAll()
+
+		c.JSON(200, gin.H{"status": "TUKKOMI"})
+	})
+
+	router.GET("/detail/:id", func(c *gin.Context) {
 		n := c.Param("id")
 
 		id, err := strconv.Atoi(n)

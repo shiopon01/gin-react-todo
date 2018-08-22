@@ -1,5 +1,7 @@
 package models
 
+import "log"
+
 // Users ...
 type Users struct {
 	ID       int    `json:"id" xorm:"'id'"`
@@ -32,6 +34,8 @@ func NewUserRepository() UserRepository {
 func (m UserRepository) GetByID(id int) *Users {
 	user := Users{ID: id}
 	has, _ := engine.Get(&user)
+
+	log.Println("USER", has, user)
 
 	if has {
 		return &user

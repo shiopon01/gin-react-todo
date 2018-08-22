@@ -1,17 +1,22 @@
 package models
 
-// Todo ...
-type Todo struct {
-	ID        int    `json:"id" xorm:"'id'"`
-	Title     string `json:"title" xorm:"'title'"`
-	Finished  bool   `json:"finished" xorm:"'finished'"`
-	CreatedAt int32  `json:"created_at" xorm:"'created_at'"`
-	UpdatedAt int32  `json:"updated_at" xorm:"'updated_at'"`
+import (
+	"log"
+	"time"
+)
+
+// Todos struct
+type Todos struct {
+	ID        int       `json:"id" xorm:"'id'"`
+	Title     string    `json:"title" xorm:"'title'"`
+	Finished  bool      `json:"finished" xorm:"'finished'"`
+	CreatedAt time.Time `json:"created_at" xorm:"'created_at'"`
+	UpdatedAt time.Time `json:"updated_at" xorm:"'updated_at'"`
 }
 
-// NewTodo ...
-func NewTodo(title string, finished bool, createdAt int32, updatedAt int32) Todo {
-	return Todo{
+// NewTodo is create todo struct function
+func NewTodo(title string, finished bool, createdAt time.Time, updatedAt time.Time) Todos {
+	return Todos{
 		Title:     title,
 		Finished:  finished,
 		CreatedAt: createdAt,
@@ -19,24 +24,40 @@ func NewTodo(title string, finished bool, createdAt int32, updatedAt int32) Todo
 	}
 }
 
-// TodoRepository ...
-type TodoRepository struct {
+// TodosRepository struct
+type TodosRepository struct {
 }
 
-// NewTodoRepository ...
+// NewTodosRepository ...
 // Run this method to get TodoRepository
-func NewTodoRepository() TodoRepository {
-	return TodoRepository{}
+func NewTodosRepository() TodosRepository {
+	return TodosRepository{}
 }
 
-// GetByID ...
-// TodoRepository's method
-func (m TodoRepository) GetByID(id int) *Todo {
-	todo := Todo{ID: id}
-	has, _ := engine.Get(&todo)
+// Methods
+
+// GetAll is get all todos
+func (m TodosRepository) GetAll() {
+
+	var todos []Todos
+	err := engine.Find(&todos)
+
+	log.Println("RESULT", err, todos)
+
+	// if results {
+	// 	return results
+	// }
+
+	return
+}
+
+// GetByID is get one todo
+func (m TodosRepository) GetByID(id int) *Todos {
+	todos := Todos{ID: id}
+	has, _ := engine.Get(&todos)
 
 	if has {
-		return &todo
+		return &todos
 	}
 
 	return nil
