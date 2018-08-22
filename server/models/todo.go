@@ -6,14 +6,16 @@ type Todo struct {
 	Title     string `json:"title" xorm:"'title'"`
 	Finished  bool   `json:"finished" xorm:"'finished'"`
 	CreatedAt int32  `json:"created_at" xorm:"'created_at'"`
+	UpdatedAt int32  `json:"updated_at" xorm:"'updated_at'"`
 }
 
 // NewTodo ...
-func NewTodo(title string, finished bool, createdAt int32) Todo {
+func NewTodo(title string, finished bool, createdAt int32, updatedAt int32) Todo {
 	return Todo{
 		Title:     title,
 		Finished:  finished,
 		CreatedAt: createdAt,
+		UpdatedAt: updatedAt,
 	}
 }
 
