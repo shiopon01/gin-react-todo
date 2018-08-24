@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import * as React from 'react'
 
 class App extends Component {
   constructor(props) {

@@ -8,6 +8,7 @@ import (
 var engine *xorm.Engine
 
 // init ...
+// Connect to DB using `engine`
 func init() {
 	var err error
 	engine, err = xorm.NewEngine("mysql", "gin:password@/gin_sample")
@@ -15,5 +16,3 @@ func init() {
 		panic(err)
 	}
 }
-
-// Connect to DB using `engine`

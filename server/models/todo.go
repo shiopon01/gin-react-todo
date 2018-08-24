@@ -37,7 +37,7 @@ func NewTodosRepository() TodosRepository {
 // Methods
 
 // GetAll is get all todos
-func (m TodosRepository) GetAll() {
+func (m TodosRepository) GetAll() *[]Todos {
 
 	var todos []Todos
 	err := engine.Find(&todos)
@@ -48,7 +48,7 @@ func (m TodosRepository) GetAll() {
 	// 	return results
 	// }
 
-	return
+	return &todos
 }
 
 // GetByID is get one todo
@@ -58,6 +58,20 @@ func (m TodosRepository) GetByID(id int) *Todos {
 
 	if has {
 		return &todos
+	}
+
+	return nil
+}
+
+// AddTodo is get one todo
+func (m TodosRepository) AddTodo(title string) *Todos {
+	todo := new(Todos)
+	todo.Title = title
+
+	succeed, _ := engine.Insert(todo)
+
+	if succeed == 1 {
+		return todo
 	}
 
 	return nil
