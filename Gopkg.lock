@@ -2,6 +2,34 @@
 
 
 [[projects]]
+  digest = "1:f4f6279cb37479954644babd8f8ef00584ff9fa63555d2c6718c1c3517170202"
+  name = "github.com/elazarl/go-bindata-assetfs"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "30f82fa23fd844bd5bb1e5f216db87fd77b5eb43"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  digest = "1:d178cf1d1da54559f7f89b0cf5d30763e03750bbf0692df2f45b1815b8b36462"
+  name = "github.com/gin-contrib/static"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "73da7037e716e63aa2b0ffceb630dfa7be299086"
+
+[[projects]]
+  digest = "1:9f1c5213a30b3ee13fdce43ac85823d476e11ff93496ef3019998baf035b4d88"
+  name = "github.com/gin-gonic/gin"
+  packages = [
+    ".",
+    "binding",
+    "render",
+  ]
+  pruneopts = "UT"
+  revision = "e2212d40c62a98b388a5eb48ecbdcf88534688ba"
+  version = "v1.1.4"
+
+[[projects]]
   digest = "1:adea5a94903eb4384abef30f3d878dc9ff6b6b5b0722da25b82e5169216dfb61"
   name = "github.com/go-sql-driver/mysql"
   packages = ["."]
@@ -34,6 +62,44 @@
   version = "v0.7.0"
 
 [[projects]]
+  digest = "1:d79fbd3d80f069826fe0becfc84e32658dbb909dcadc6d7e121acad6054c5956"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  pruneopts = "UT"
+  revision = "2402d76f3d41f928c7902a765dfc872356dd3aad"
+
+[[projects]]
+  branch = "master"
+  digest = "1:31bd492aa2822484bcec518e0b693e1aedfdf9637b43527c0ad29d5cf8abfd43"
+  name = "github.com/manucorporat/sse"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d"
+
+[[projects]]
+  digest = "1:d4d17353dbd05cb52a2a52b7fe1771883b682806f68db442b436294926bbfafb"
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "0360b2af4f38e8d38c7fce2a9f4e702702d73a39"
+  version = "v0.0.3"
+
+[[projects]]
+  digest = "1:c8904037a371cbf41a32bcda3c4c244bb71fb32e2cb4006457a4c3a897990783"
+  name = "golang.org/x/net"
+  packages = ["context"]
+  pruneopts = "UT"
+  revision = "f315505cf3349909cdf013ea56690da34e96a451"
+
+[[projects]]
+  branch = "master"
+  digest = "1:4dcdb3f7c22f5f048de7c7ad5b72c4547d63bfb4923da15538d0051d553b2ef8"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  pruneopts = "UT"
+  revision = "11551d06cbcc94edc80a0facaccbda56473c19c1"
+
+[[projects]]
   digest = "1:c25289f43ac4a68d88b02245742347c94f1e108c534dda442188015ff80669b3"
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
@@ -41,10 +107,29 @@
   revision = "b1f26356af11148e710935ed1ac8a7f5702c7612"
   version = "v1.1.0"
 
+[[projects]]
+  digest = "1:68c70644bbc3b84184546e5dc2cbe4be8508195df988e8f46e042ac4e108a04e"
+  name = "gopkg.in/go-playground/validator.v8"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c193cecd124b5cc722d7ee5538e945bdb3348435"
+  version = "v8.15.1"
+
+[[projects]]
+  digest = "1:342378ac4dcb378a5448dd723f0784ae519383532f5e70ade24132c4c8693202"
+  name = "gopkg.in/yaml.v2"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+  version = "v2.2.1"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/elazarl/go-bindata-assetfs",
+    "github.com/gin-contrib/static",
+    "github.com/gin-gonic/gin",
     "github.com/go-sql-driver/mysql",
     "github.com/go-xorm/xorm",
   ]

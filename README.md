@@ -6,16 +6,11 @@
 
 # How to run this sample
 
-- 1. Install
+- 1. Install node and go packages
 
 ```
 yarn install
-```
-
-and
-
-```
-(WIP)
+dep ensure
 ```
 
 - 2. Create `bindata.go`
@@ -38,10 +33,16 @@ fresh
 
 access to `localhost:8080`
 
+# Supplement
+
+- Release
+
+```
+make build
+```
+
 ## memo
 
+- create migrate file
+
 `goose create create_users sql`
-
-start server
-
-`yarn run dev` and `fresh`
