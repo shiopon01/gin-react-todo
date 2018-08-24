@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
-	controllers "github.com/shiopon01/gin-sample/server/controllers"
+	controllers "github.com/shiopon01/gin-react-todo/server/controllers"
 )
 
 // RouteCollections is app main router

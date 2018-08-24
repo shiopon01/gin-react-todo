@@ -5,7 +5,7 @@ import (
 	"strconv"
 
 	"github.com/gin-gonic/gin"
-	"github.com/shiopon01/gin-sample/server/models"
+	"github.com/shiopon01/gin-react-todo/server/models"
 )
 
 // TodoRegister is todo router.

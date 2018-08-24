@@ -1,4 +1,4 @@
-# gin-sample
+# gin-react-todo
 
 - gin
 - goose

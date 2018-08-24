@@ -8,7 +8,7 @@ import (
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 
-	"github.com/shiopon01/gin-sample/server/env"
+	"github.com/shiopon01/gin-react-todo/server/env"
 )
 
 // BinaryFileSystem ..

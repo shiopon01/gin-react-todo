@@ -1,8 +1,8 @@
 {
-  "name": "gin-sample",
+  "name": "gin-react-todo",
   "version": "0.1.0",
   "private": true,
-  "description": "gin sample",
+  "description": "gin-react-todo",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -25,7 +25,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shiopon01/gin-sample.git"
+    "url": "git+https://github.com/shiopon01/gin-react-todo.git"
   },
   "author": "shiopon01 <shio.0323@gmail.com> (http://shiopon.net)",
   "license": "MIT",
