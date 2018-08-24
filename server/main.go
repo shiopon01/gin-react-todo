@@ -7,6 +7,8 @@ import (
 	"github.com/elazarl/go-bindata-assetfs"
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
+
+	"github.com/shiopon01/gin-sample/server/env"
 )
 
 // BinaryFileSystem ..
@@ -45,6 +47,11 @@ func ReadAsset(root string) *binaryFileSystem {
 }
 
 func main() {
+	// Select Development mode or Release mode
+	if !env.DEBUG {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
 	r := gin.Default()
 
 	// Front page display

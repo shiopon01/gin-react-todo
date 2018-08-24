@@ -20,8 +20,6 @@
   },
   "scripts": {
     "dev": "webpack -w",
-    "bindata": "go-bindata -debug -o ./server/bindata.go assets/*",
-    "build": "cross-env NODE_ENV=production webpack -p && go-bindata -o ./server/bindata.go assets/* && gox -cgo -osarch=\"windows/amd64 linux/amd64\" -output=dist/web_{{.OS}}_{{.Arch}} ./server/...",
     "build:dev": "webpack --mode development",
     "build:prd": "webpack --mode production"
   },
