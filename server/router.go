@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/gin-gonic/gin"
 
-	controllers "github.com/shiopon01/gin-react-todo/server/controllers"
+	"github.com/shiopon01/gin-react-todo/server/controllers"
 )
 
 // RouteCollections is app main router
@@ -12,8 +12,8 @@ func RouteCollections(router *gin.Engine) {
 	router.StaticFile("/favicon.ico", "./assets/favicon.ico")
 
 	// 404 Page
-	router.NoRoute(func(c *gin.Context) {
-	})
+	// router.NoRoute(func(c *gin.Context) {
+	// })
 
 	// Add API Routes
 	v1 := router.Group("/api")

@@ -11,6 +11,24 @@ import (
 	"github.com/shiopon01/gin-react-todo/server/env"
 )
 
+func main() {
+	// Select Development mode or Release mode
+	if !env.DEBUG {
+		gin.SetMode(gin.ReleaseMode)
+	}
+
+	r := gin.Default()
+
+	// Read bindata.go and Display front page
+	r.Use(static.Serve("/", ReadAsset("assets")))
+
+	// API routing
+	RouteCollections(r)
+
+	// Listen and serve on 0.0.0.0:8080
+	r.Run(":8080")
+}
+
 // BinaryFileSystem ..
 type BinaryFileSystem interface{}
 
@@ -44,22 +62,4 @@ func ReadAsset(root string) *binaryFileSystem {
 	return &binaryFileSystem{
 		fs,
 	}
-}
-
-func main() {
-	// Select Development mode or Release mode
-	if !env.DEBUG {
-		gin.SetMode(gin.ReleaseMode)
-	}
-
-	r := gin.Default()
-
-	// Front page display
-	r.Use(static.Serve("/", ReadAsset("assets")))
-
-	// API routing
-	RouteCollections(r)
-
-	// Listen and serve on 0.0.0.0:8080
-	r.Run(":8080")
 }

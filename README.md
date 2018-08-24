@@ -1,5 +1,7 @@
 # gin-react-todo
 
+This repositry is sapmle project (use gin)
+
 - gin
 - goose
 - xorm
