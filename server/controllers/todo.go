@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"log"
 	"reflect"
 	"strconv"
 
@@ -71,8 +70,6 @@ func add(c *gin.Context) {
 
 	var json TextStr
 	c.BindJSON(&json)
-
-	log.Println("TITLE: ", json.Text)
 
 	if "" == json.Text {
 		c.JSON(400, gin.H{"status": "required title....."})
