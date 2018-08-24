@@ -1,7 +1,6 @@
 package models
 
 import (
-	"log"
 	"time"
 )
 
@@ -42,11 +41,9 @@ func (m TodosRepository) GetAll() *[]Todos {
 	var todos []Todos
 	err := engine.Find(&todos)
 
-	log.Println("RESULT", err, todos)
-
-	// if results {
-	// 	return results
-	// }
+	if err != nil {
+		return nil
+	}
 
 	return &todos
 }

@@ -64,11 +64,11 @@ func detail(c *gin.Context) {
 // POST /add
 
 func add(c *gin.Context) {
-	type TextStr struct {
+	type JSONText struct {
 		Text string `json:"text" binding:"required"`
 	}
 
-	var json TextStr
+	json := new(JSONText)
 	c.BindJSON(&json)
 
 	if "" == json.Text {
