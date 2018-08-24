@@ -23,7 +23,7 @@ class App extends Component {
     const { message } = this.state
 
     return (
-      <div>MESSAGE: { message }</div>
+      <div>HELLO: { message }</div>
     )
   }
 }
